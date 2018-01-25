@@ -1,8 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import SearchBar from './components/SearchBar';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+class App extends React.Component {
+  handleTermChange(term) {
+    console.log(term);
+  }
+
+
+  render() {
+    return(
+      <div className='greeting'>
+        <SearchBar onTermChange={this.handleTermChange}/>
+      </div>
+    );
+
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));
